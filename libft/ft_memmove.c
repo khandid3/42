@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void *ft_memmove( void *dst, const void *src, size_t len)
+void *ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned int	i;
 	unsigned char	*dstbis;
