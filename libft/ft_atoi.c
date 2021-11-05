@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdomingu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 10:52:53 by rdomingu          #+#    #+#             */
-/*   Updated: 2021/11/05 10:53:21 by rdomingu         ###   ########.fr       */
+/*   Created: 2021/11/05 11:32:04 by rdomingu          #+#    #+#             */
+/*   Updated: 2021/11/05 12:17:19 by rdomingu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
-void *memchr(const void *s, int c, size_t n)
+int	ft_atoi(const char* str)
 {
-	int		i;
-	int		j;
-	char	*ret;
+	int	i;
+	int	signe;
+	int	ret;
+
 
 	i = 0;
-	j = 0;
-	while ((s[i]) && (i < n))
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+		i++;
+	signe = 1;
+	while (str[i] == '-' || str[i]== '+')
 	{
-		if (s[i] == (unsigned char)(c))
-		{
-			while (s[i])
-			{
-				ret[j] = s[i];
-				i++;
-				j++;
-			}
-		return (ret);
-		}
+		if (str[i++] == '-')
+			signe = signe * -1;
 	}
-	return (NULL);	
+	ret = 0;
+	while (str[i] >= 48 && str[i] <= 57)
+	{
+		ret = (ret * 10) + (str[i] - '0');
+		i++;
+	}
+	return (signe * ret);
 }
