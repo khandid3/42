@@ -4,7 +4,7 @@
 
 size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	if (dstsize != 0)

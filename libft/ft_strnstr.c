@@ -6,20 +6,26 @@
 /*   By: rdomingu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 11:11:58 by rdomingu          #+#    #+#             */
-/*   Updated: 2021/11/05 11:31:50 by rdomingu         ###   ########.fr       */
+/*   Updated: 2021/11/16 12:09:43 by rdomingu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	if (needle == '\0')
-		return (haystack);
-	while (i < len)
+	size_t i1;
+	size_t i2;
+
+	i1 = 0;
+	i2 = 0;
+	if (ft_strlen(needle) == 0)
+		return ((char *)haystack);
+	while (haystack[i1] && i1 < len)
 	{
-		if (ft_strncmp(haystack, needle, len) == 0)
-			return (needle);
-		return (NULL);
+		if (ft_strncmp(haystack +i1, needle, ft_strlen(needle)) == 0)
+			return ((char *)&haystack[i1]);
+		i1++;
 	}
+	return (NULL);
 }

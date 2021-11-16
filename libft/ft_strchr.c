@@ -2,24 +2,13 @@
 
 char *strchr(const char *s, int c)
 {
-	int	i;
-	int	j;
-	char *resultat;
+	size_t i;
 
-	j = 0;
 	i = 0;
-	while (s[i])
+	while (i <= ft_strlen(s))
 	{
-		if (s[i] == c)
-		{
-			while (s[i])
-			{
-				resultat[j] = s[i];
-				j++;
-				i++;
-				return (resultat);
-			}
-		}
+		if (s[i] == (char)c)
+			return ((char *)s + i);
 		i++;
 	}
 	return (NULL);

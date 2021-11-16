@@ -6,7 +6,7 @@
 /*   By: rdomingu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 10:52:53 by rdomingu          #+#    #+#             */
-/*   Updated: 2021/11/05 10:53:21 by rdomingu         ###   ########.fr       */
+/*   Updated: 2021/11/16 10:18:20 by rdomingu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,17 @@
 
 void *memchr(const void *s, int c, size_t n)
 {
-	int		i;
-	int		j;
-	char	*ret;
+	size_t		i;
+	unsigned char	*temp;
 
 	i = 0;
-	j = 0;
-	while ((s[i]) && (i < n))
+	temp = (unsigned char *)s;
+	while (i < n)
 	{
-		if (s[i] == (unsigned char)(c))
-		{
-			while (s[i])
-			{
-				ret[j] = s[i];
-				i++;
-				j++;
-			}
-		return (ret);
-		}
+		if (temp[i] == (unsigned char)c)
+			return ((void *)&s[i]);
+		else
+			i++;
 	}
 	return (NULL);	
 }
