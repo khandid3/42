@@ -1,74 +1,62 @@
-SRCS = ft_islpha.c \
-	  ft_isdigit.c \
-	  ft_isalnum.c \
-	  ft_isascii.c \
-	  ft_isprint.c \
-	  ft_strlen.c \
-	  ft_memset.c \
-	  ft_bzero.c \
-	  ft_memcpy.c \
-	  ft_memmove.c \
-	  ft_strlcpy.c \
-	  ft_strlcat.c \
-	  ft_toupper.c \
-	  ft_tolower.c \
-	  ft_strchr.c \
-	  ft_strrchr.c \
-	  ft_strncmp.c \
-	  ft_memchr.c \
-	  ft_memcmp.c \
-	  ft_strnstr.c \
-	  ft_atoi.c \
-	  ft_calloc.c \
-	  ft_strdup.c \
-	  ft_substr \
-	  ft_strjoin \
-	  ft_strtrim \
-	  ft_split \
-	  ft_itoa \
-	  ft_strmapi \
-	  ft_striteri \
-	  ft_putchar_fd \
-	  ft_putstr_fd \
-	  ft_putendl_fd \
-	  ft_putnbr_fd;
+NAME 	=	libft.h
 
-OBJS	=	${SRCS:.c=.o}
+SRCS	=	ft_islpha.c \
+	  	ft_isdigit.c \
+	  	ft_isalnum.c \
+	  	ft_isascii.c \
+	 	ft_isprint.c \
+	  	ft_strlen.c \
+		ft_memset.c \
+		ft_bzero.c \
+	  	ft_memcpy.c \
+	  	ft_memmove.c \
+	  	ft_strlcpy.c \
+	  	ft_strlcat.c \
+	  	ft_toupper.c \
+	  	ft_tolower.c \
+	  	ft_strchr.c \
+	  	ft_strrchr.c \
+	  	ft_strncmp.c \
+	  	ft_memchr.c \
+	  	ft_memcmp.c \
+	  	ft_strnstr.c \
+	  	ft_atoi.c \
+	  	ft_calloc.c \
+	  	ft_strdup.c \
+	  	ft_substr \
+	  	ft_strjoin \
+	  	ft_strtrim \
+	  	ft_split \
+	  	ft_itoa \
+	  	ft_strmapi \
+	  	ft_striteri \
+	  	ft_putchar_fd \
+	  	ft_putstr_fd \
+	  	ft_putendl_fd \
+	  	ft_putnbr_fd;
 
-NAME	=	a.out
+OBJS	=	$(SRCS:.c=.o)
 
-CC		=	cc
+CC	=	gcc
 
 CFLAGS	+=	-Wall -Wextra -Werror
 
-.c.o	=	
-			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+RM 	=	rm -f
 
-LIB = -L. -lmalib
+all 	:	${NAME}
 
-RM = rm -f
+${NAME}	:	${OBJS}
+			ar rcs  $(NAME) $(OBJS)
 
-CLEAN = clean
+$(OBJS)	:	%.o : %.c
+			$(CC) -c $(CFLAGS) $< -o $@
 
-all : 
-		@make $(NAME)
+clean 	:
+			${RM} ${OBJS} 
 
-$(NAME): $(OBJS)
-		$(CC) -o ${NAME} $(OBJS) $(LIB)
+fclean	:	clean
+			${RM} ${NAME}
 
-clean : $(RM) $(OBJS) 
-	@$(CLEAN)
+re 	:	fclean all
 
-fclean:	clean
-		$(RM) ${NAME}
-
-re : fclean all
-
-.PHONY:	all clean fclean re
-
-
-
-
-
-		
-	
+.PHONY	:	all clean fclean re

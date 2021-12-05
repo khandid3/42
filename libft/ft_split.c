@@ -1,51 +1,64 @@
 #include "libft.h"
 
-char **ft_split(char const *s, char c)
+static int	count_words(char const *str, char c)
 {
-	char	**tab;
+	int	words;
+	int	i;
+
+	words = 0;
+	i = 0;
+	if (! *str)
+		return (0);
+	while (str[i])
+	{
+		if (str[i] == c)
+			i++;
+		else
+		{
+			words++;
+			while (str[i] != c && str[i] != '\0')
+				i++;
+		}
+	}
+	return (words);
+}
+
+static void	make_split(char **result, char const *str, char c)
+{
 	int		i;
 	int		j;
-	int		k;
-	int		l;
-	int		n;
+	int		start;
+	int		len;
 
 	i = 0;
 	j = 0;
-	k = 0;
-	l = 0;
-	n = 0;
-	while (s[i])
-	{
-		if (s[i] == c)
-			n++;
+	start = 0;
+	while (str[i] == c)
 		i++;
+	while (str[i])
+	{
+		start = i;
+		while (str[i] != c && str[i])
+			i++;
+		len = i - start;
+		while (str[i] == c)
+			i++;
+		result[j] = ft_substr(str, start, len);
+		j++;
 	}
-	i = 0;
-	tab = malloc(sizeof(char) * (ft_strlen(s) - n));
-	if (!tab)
+	result[j] = NULL;
+}
+
+char	**ft_split(char const *str, char c)
+{
+	char	**result;
+
+	result = malloc(sizeof(char *) * (count_words(str, c) + 1));
+	if (!result)
 		return (NULL);
-	if (ft_charisinstr(c, s) == 0)
-	{
-		while (s[i++])
-			tab[0][i] = s[i];
-		return (tab);
-	}
-	while (s[i])
-	{
-		if (s[i] == c)
-		{
-			while (k < i)
-			{
-				tab[j][l] = s[k];
-				k++;
-				l++;
-			}
-			k++;
-			j++;
-			l = 0;
-		}
-		i++;
-	}
-	tab[j][k] =	NULL;
-	return (tab);
+	if (! *str)
+		result[0] = NULL;
+	else
+		make_split(result, str, c);
+	return (result);
 }
