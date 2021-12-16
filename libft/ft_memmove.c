@@ -1,29 +1,19 @@
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void *ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned int	i;
-	unsigned char	*dstbis;
-	unsigned char	*srcbis;
+	char	*buf;
 
-	i = 0;
-	dstbis = ((unsigned char *)dst);
-	srcbis = ((unsigned char *)src);
-	while ((i < len) && (srcbis[i] != '\0'))
+	buf = malloc(sizeof(char) * len);
+	if (buf != NULL)
 	{
-	dstbis[i] = srcbis[i];
-	i++;
-	}	
-	while (dstbis[i] != '\0')
-	{
-	dstbis[i] = dstbis[i];
-	i++;
+		ft_memcpy(buf, src, len);
+		ft_memcpy(dst, buf, len);
+		free(buf);
 	}
-	dstbis[i] = '\0';
-	return (dstbis);
+	return (dst);
 }
-
+/*
 int	main()
 {
 	char	src[] = "maison";
@@ -32,3 +22,4 @@ int	main()
 	printf("%s\n", ft_memmove(dst, src, 5));
 	printf("%s", memmove(dst2, src, 5));
 }
+*/
