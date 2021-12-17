@@ -1,6 +1,19 @@
-NAME 	=	libft.h
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: rdomingu <marvin@42lausanne.ch>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/12/17 10:15:43 by rdomingu          #+#    #+#              #
+#    Updated: 2021/12/17 11:56:42 by rdomingu         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-SRCS	=	ft_islpha.c \
+NAME 	=	libft.a
+HEAD	=	libft.h
+
+SRC	=	ft_isalpha.c \
 	  	ft_isdigit.c \
 	  	ft_isalnum.c \
 	  	ft_isascii.c \
@@ -23,39 +36,34 @@ SRCS	=	ft_islpha.c \
 	  	ft_atoi.c \
 	  	ft_calloc.c \
 	  	ft_strdup.c \
-	  	ft_substr \
-	  	ft_strjoin \
-	  	ft_strtrim \
-	  	ft_split \
-	  	ft_itoa \
-	  	ft_strmapi \
-	  	ft_striteri \
-	  	ft_putchar_fd \
-	  	ft_putstr_fd \
-	  	ft_putendl_fd \
-	  	ft_putnbr_fd;
+	  	ft_substr.c \
+	  	ft_strjoin.c \
+	  	ft_strtrim.c \
+	  	ft_split.c \
+	  	ft_itoa.c \
+	  	ft_strmapi.c \
+	  	ft_striteri.c \
+	  	ft_putchar_fd.c \
+	  	ft_putstr_fd.c \
+	  	ft_putendl_fd.c \
+	  	ft_putnbr_fd.c
 
-OBJS	=	$(SRCS:.c=.o)
+OBJS	=	$(SRC:.c=.o)
 
-CC	=	gcc
+CC		=	gcc
 
-CFLAGS	+=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror
 
-RM 	=	rm -f
+all 	:	$(NAME)
 
-all 	:	${NAME}
+$(NAME)	:	$(OBJS)
+			ar rc $(NAME) $(OBJS)
 
-${NAME}	:	${OBJS}
-			ar rcs  $(NAME) $(OBJS)
-
-$(OBJS)	:	%.o : %.c
-			$(CC) -c $(CFLAGS) $< -o $@
-
-clean 	:
-			${RM} ${OBJS} 
+clean 	:	
+			@rm -rf $(OBJ)
 
 fclean	:	clean
-			${RM} ${NAME}
+			@rm -rf $(NAME)
 
 re 	:	fclean all
 

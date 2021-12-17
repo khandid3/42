@@ -6,13 +6,13 @@
 /*   By: rdomingu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 10:52:53 by rdomingu          #+#    #+#             */
-/*   Updated: 2021/11/16 10:18:20 by rdomingu         ###   ########.fr       */
+/*   Updated: 2021/12/17 12:47:01 by rdomingu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *memchr(const void *s, int c, size_t n)
+void *ft_memchr(const void *s, int c, size_t n)
 {
 	size_t		i;
 	unsigned char	*temp;
