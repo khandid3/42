@@ -6,7 +6,7 @@
 /*   By: rdomingu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 11:11:18 by rdomingu          #+#    #+#             */
-/*   Updated: 2021/12/17 11:16:52 by rdomingu         ###   ########.fr       */
+/*   Updated: 2021/12/17 18:29:54 by rdomingu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	*ft_calloc(size_t count, size_t size)
 	ptr = (void *)malloc(count * size);
 	if (!ptr)
 		return (NULL);
-	ft_bzero(ptr, count);
+	ft_bzero(ptr, count * size);
 	return (ptr);
 }

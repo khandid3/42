@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rdomingu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/17 19:11:43 by rdomingu          #+#    #+#             */
+/*   Updated: 2021/12/17 19:11:44 by rdomingu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_charisinstr(char c, char const *str);
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;
 	size_t	end;
@@ -14,6 +26,6 @@ char *ft_strtrim(char const *s1, char const *set)
 	while (ft_strchr(set, s1[start]) != NULL)
 		start++;
 	while (ft_strchr(set, s1[end]) != NULL)
-			end--;
+		end--;
 	return (ft_substr(s1, start, (end - start + 1)));
 }

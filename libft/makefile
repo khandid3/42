@@ -6,7 +6,7 @@
 #    By: rdomingu <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/17 10:15:43 by rdomingu          #+#    #+#              #
-#    Updated: 2021/12/17 11:56:42 by rdomingu         ###   ########.fr        #
+#    Updated: 2021/12/17 19:38:06 by rdomingu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,10 +57,10 @@ CFLAGS	=	-Wall -Wextra -Werror
 all 	:	$(NAME)
 
 $(NAME)	:	$(OBJS)
-			ar rc $(NAME) $(OBJS)
+			ar rcs $(NAME) $(OBJS)
 
 clean 	:	
-			@rm -rf $(OBJ)
+			@rm -rf $(OBJS)
 
 fclean	:	clean
 			@rm -rf $(NAME)

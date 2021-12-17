@@ -6,13 +6,13 @@
 /*   By: rdomingu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 11:44:14 by rdomingu          #+#    #+#             */
-/*   Updated: 2021/12/17 13:31:16 by rdomingu         ###   ########.fr       */
+/*   Updated: 2021/12/17 19:08:56 by rdomingu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
 	size_t	i;

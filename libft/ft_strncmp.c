@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rdomingu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/17 19:05:08 by rdomingu          #+#    #+#             */
+/*   Updated: 2021/12/17 19:11:33 by rdomingu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_charcmp(char c1, char c2)
@@ -9,8 +21,7 @@ int	ft_charcmp(char c1, char c2)
 	return (0);
 }
 
-
-int	ft_strncmp (const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
@@ -27,4 +38,3 @@ int	ft_strncmp (const char *s1, const char *s2, size_t n)
 		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 	return (0);
 }
-

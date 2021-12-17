@@ -6,7 +6,7 @@
 /*   By: rdomingu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 11:32:04 by rdomingu          #+#    #+#             */
-/*   Updated: 2021/12/17 13:12:55 by rdomingu         ###   ########.fr       */
+/*   Updated: 2021/12/17 18:46:52 by rdomingu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_atoi(const char *str)
 	{
 		if (str[i] == '-')
 		{
-			signe = signe * -1;;
+			signe = signe * -1;
 		}
 		i++;
 	}
