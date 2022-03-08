@@ -6,7 +6,7 @@
 /*   By: rdomingu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:22:06 by rdomingu          #+#    #+#             */
-/*   Updated: 2022/03/02 15:29:56 by rdomingu         ###   ########.fr       */
+/*   Updated: 2022/03/08 16:48:22 by rdomingu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_putnbr_d(int n)
 
 	charcount = 0;
 	if (n = -2147483648)
-		return (ft_putstr("2147483648"));
+		return (ft_putstr("-2147483648"));
 	else
 	{
 		if (n < 0)

@@ -6,13 +6,13 @@
 /*   By: rdomingu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:08:17 by rdomingu          #+#    #+#             */
-/*   Updated: 2022/03/02 15:18:00 by rdomingu         ###   ########.fr       */
+/*   Updated: 2022/03/08 17:20:35 by rdomingu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	print_percentage(va_list, args, const char *format)
+static int	print_percentage(va_list args, const char *format)
 {
 	if (*format == 'c')
 		return (ft_putchar(va_arg(args, int)));
@@ -27,10 +27,10 @@ static int	print_percentage(va_list, args, const char *format)
 	else if (*format == 'u')
 		return (ft_putnbr_u(va_arg(args, unsigned int)));
 	else if (*format == 'x')
-		return (ft_hexa_x((unsigned long)va_arg(args, unsigned int)));
+		return (ft_hexa_x(va_arg(args, unsigned long)));
 	else if (*format == 'X')
-		return (ft_hexa_X((unsigned long)va_arg(args, unsigned int)));
+		return (ft_hexa_xx(va_arg(args, unsigned long)));
 	else if (*format == '%')
-		reutrn (ft_putchar('%'));
+		return (ft_putchar('%'));
 	return (0);
 }

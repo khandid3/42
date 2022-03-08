@@ -6,7 +6,7 @@
 /*   By: rdomingu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 16:52:12 by rdomingu          #+#    #+#             */
-/*   Updated: 2022/03/02 15:09:27 by rdomingu         ###   ########.fr       */
+/*   Updated: 2022/03/08 17:20:38 by rdomingu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_printf(const char *format, ...)
 			charcount += print_percentage(args, &format[i]);
 			i++;
 		}
-		va_end(args)
+		va_end(args);
 	}
 	return (charcount);
 }

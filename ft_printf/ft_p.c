@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_p.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdomingu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/02 15:13:18 by rdomingu          #+#    #+#             */
-/*   Updated: 2022/03/08 14:36:01 by rdomingu         ###   ########.fr       */
+/*   Created: 2022/03/08 15:29:39 by rdomingu          #+#    #+#             */
+/*   Updated: 2022/03/08 17:15:15 by rdomingu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putchar(char c)
+int	ft_p(unsigned long n)
 {
-	write(1, &c, 1);
-	return (1);
+	return (ft_putstr("0x") + ft_hexa_x(n));
 }
