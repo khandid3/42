@@ -11,7 +11,7 @@ Then, I will use this library for the next projects, listed below.
 
 *- printf :*
 
-Creating the famous printf function. !
+Creating the famous printf function !
 
 In particular, I handle a variable number of arguments.
 
