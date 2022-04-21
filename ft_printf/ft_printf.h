@@ -6,7 +6,7 @@
 /*   By: rdomingu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:09:43 by rdomingu          #+#    #+#             */
-/*   Updated: 2022/03/08 17:20:33 by rdomingu         ###   ########.fr       */
+/*   Updated: 2022/04/21 16:10:47 by rdomingu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@
 # include <stdio.h>
 
 int	ft_printf(const char *format, ...);
-
-static int	print_percentage(va_list args, const char *format);
 
 int	ft_putchar(char c);
 
