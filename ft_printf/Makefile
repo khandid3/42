@@ -6,11 +6,11 @@
 #    By: rdomingu <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/08 16:49:14 by rdomingu          #+#    #+#              #
-#    Updated: 2022/03/08 17:10:50 by rdomingu         ###   ########.fr        #
+#    Updated: 2022/05/04 17:53:18 by rdomingu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=		libftprint.a
+NAME	=		libftprintf.a
 
 SRCS	=		ft_printf.c			\
 				ft_putchar.c		\
@@ -21,31 +21,21 @@ SRCS	=		ft_printf.c			\
 				ft_putnbr_d.c		\
 				ft_putnbr_u.c
 
-OBJS	=		$(SRCS:.c=.o)
+OBJS			= $(SRCS:.c=.o)
 
-CC		=		gcc
 
-CFFLAGS	+=		-Wall -Wextra -Werror
+FLAGS 			= -Wall -Wextra -Werror -I.
 
-RM		=		rm -f
+all : 			$(NAME)
+$(NAME) : 		$(OBJS)
+				ar src  $(NAME) $(OBJS)
+%.o: %.c
+				gcc -c $(FLAGS) -o $@ $^
 
-all		:		$(NAME)
+clean :
+				/bin/rm -rf *.o
 
-$(NAME)	:		$(OBJS)
-					ar rcs $(NAME) $(OBJS)
+fclean : clean
+				/bin/rm -rf $(NAME)
 
-$(OBJS)	:		%.o : %.c
-					$(CC) -c $(CFLAGS) $< -o $@
-
-clean	:		
-				$(RM) $(OBJS)
-
-fclean	:		clean
-					$(RM) $(NAME)
-
-re		:		fclean all
-
-a.out	:		$(NAME)
-					gcc -o $@ $(CFLAGS) $(NAME)
-
-.PHONY	:		all clean fclean re
+re : fclean all
